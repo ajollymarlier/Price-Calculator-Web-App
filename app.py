@@ -15,8 +15,9 @@ def get_discount_codes():
     with open('./data/discountCodes.json') as f:
         data = json.load(f)
 
-    data.headers.add('Access-Control-Allow-Origin', '*')       
-    return json.dumps(data)
+    response = jsonify(json.dumps(data))
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 #Returns inventory data from local json file
@@ -36,8 +37,9 @@ def get_cart_items():
     with open('./data/cartItems.json') as f:
         data = json.load(f)
     
-    data.headers.add('Access-Control-Allow-Origin', '*')
-    return json.dumps(data)
+    response = jsonify(json.dumps(data))
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return response
 
 
 if __name__ == "__main__":
