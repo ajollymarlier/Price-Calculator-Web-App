@@ -1,0 +1,8 @@
+[
+    {"code": "TENOFF", "discountRate": 0.10},
+    {"code": "SWEET15", "discountRate": 0.15},
+    {"code": "TWENTYTWENTY", "discountRate": 0.20},
+    {"code": "HEYTHIRTY", "discountRate": 0.30},
+    {"code": "HALFSIES", "discountRate": 0.50},
+    {"code": "ALMOSTFREE", "discountRate": 0.75}
+]
