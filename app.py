@@ -1,6 +1,6 @@
 import json
 import os
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__, static_folder="/", static_url_path="/")
 
@@ -25,9 +25,9 @@ def get_inventory():
     with open('./data/inventory.json') as f:
         data = json.load(f)
 
-    response = json.dumps(data)
+    response = jsonify(json.dumps(data))
     response.headers.add('Access-Control-Allow-Origin', '*')
-    return 
+    return response
 
 
 #Returns saved Cart Items
