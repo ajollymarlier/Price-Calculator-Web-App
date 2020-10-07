@@ -25,8 +25,9 @@ def get_inventory():
     with open('./data/inventory.json') as f:
         data = json.load(f)
 
-    data.headers.add('Access-Control-Allow-Origin', '*')
-    return json.dumps(data)
+    response = json.dumps(data)
+    response.headers.add('Access-Control-Allow-Origin', '*')
+    return 
 
 
 #Returns saved Cart Items
