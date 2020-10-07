@@ -6,7 +6,7 @@ app = Flask(__name__, static_folder="/", static_url_path="/")
 
 @app.route("/")
 def index():
-	return "Hello"
+	return "YOU WEREN'T SUPPOSED TO SEE THIS"
 
 #Returns discountCode data from local json file
 @app.route('/api/getDiscountCodes')
