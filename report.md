@@ -19,6 +19,26 @@ With all these factors taken into account, I decided to choose React since it wa
 
 
 ## **Backend Technology**
+The three main technologies I considered for my backend, were Flask, Ruby on Rails, and Express.
 
+In terms of industry popularity, according to *https://insights.stackoverflow.com/survey/2019*, Express(68.3%) is the most loved framework by developers, followed by Flask(61.1%) and then Ruby on Rails(57.1%). This meant that I would be favoring Express or Flask with respect to this criteria.
 
+Since I had also never worked with a backend framework before, I wanted to choose a language that I was most comfortable with already. I have never worked with Ruby before, so it was automatically out of contention. With Express, I had worked with Javascript before, but that was 4 years ago, and I would need to learn a lot of it over again. This left me with Python as the obvious choice, as I had been using it regularly since I started studying at University of Toronto. Therefore I favoured Flask.
 
+Since I would only be using the built-in technology, and not any additional frameworks for such a small web app, there was nothing to separate these three languages in this criteria. 
+
+As I was going to build a relatively small web app, I wanted a framework that was lightweight and easy to implement. According to *https://stackshare.io/stackups/flask-vs-rails-vs-expressjs*, Rails is known for having a bloated library of functions that would be useless to me, and would only take up unneeded space. ExpressJS would be a lighter solution, but it would require the use of NodeJS as well, which would again needlessly inflate the number of technologies needed. On the other hand, Flask would let me quickly and easily set up a simple backend with almost no bloat. Therefore Flask was the obvious choice.
+
+Finally, in terms of performance Express was much faster than both Ruby and Python, according to *https://railsware.com/blog/python-vs-ruby-vs-node-js-which-platform-is-a-fit-for-your-project/*. That being said, since I was only going to be doing elementary level computations, I decided to handle those in the frontend, and only use the backend to retrieve and save data. Therefore, the relative speed of each language was not as important to me.
+
+In conclusion, I decided that I wanted to favour experience and ease of implementation when choosing the framework. In the end, my past experience in python, and the small size of Flask as a framework led me to choosing it as a backend technology.
+
+## **Data Storage Methods**
+
+Since I knew that I wasn't going to be dealing with huge amounts of data, and the only updates I would do would be updating the user's current cart items, I decided that a traditional database was unnecessary. I instead opted to choose a static file based system, hosted in the backend. Out of all the possible text file types, I narrowed my search down to .csv, .txt, and .json files.
+
+Since the information in these files would be serialized and sent to the frontend regularly, I wanted a file format that would easily be parsed into a sendable form.
+
+Txt files had no inherent structure, and therefore it would rely on some arbitrary structure that would be hard to stay consistent, were I to expand this project to incorporate other engineers. Csv had an inherent structure, but still required some extra string parsing to serialize it. However, Json files were meant for this purpose, and python has built in libraries that easily let me serialize the data.
+
+This meant that .json files were the obvious choice.
