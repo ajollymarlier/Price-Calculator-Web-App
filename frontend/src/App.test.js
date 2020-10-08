@@ -15,3 +15,21 @@ it("getInventory connection successful", () => {
       }
     }).catch(() => {throw Error})
 })
+
+it("getCartItems connection successful", () => {
+  fetch(`${window.origin}api/getCartItems`)
+    .then(res => {
+      if(res.status !== 200){
+        throw Error
+      }
+    }).catch(() => {throw Error})
+})
+
+it("getDiscountCodes connection successful", () => {
+  fetch(`${window.origin}api/getDiscountCodes`)
+    .then(res => {
+      if(res.status !== 200){
+        throw Error
+      }
+    }).catch(() => {throw Error})
+})
