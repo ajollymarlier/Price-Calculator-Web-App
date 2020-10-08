@@ -54,5 +54,8 @@ def save_cart_items():
     return res
 
 if __name__ == "__main__":
-    app.run()
-    #app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))   
+    #For testing localy
+    #app.run()
+
+    #For production
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))   
