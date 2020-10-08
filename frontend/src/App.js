@@ -124,7 +124,7 @@ class App extends Component{
                 justify="center"
                 alignItems="center">
 
-                <Typography variant="h3" gutterBottom>Price Checkout Calculator</Typography>
+                <Typography variant="h3" gutterBottom={true} color="primary">Price Checkout Calculator</Typography>
 
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item xs={10} md={5}>
