@@ -1,5 +1,4 @@
 import json
-import os
 from flask import Flask, jsonify
 
 app = Flask(__name__)
@@ -38,4 +37,4 @@ def get_cart_items():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run()   
