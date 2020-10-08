@@ -20,7 +20,7 @@ createMuiTheme({
             main: '#f44336',
             dark: '#ba000d',
             contrastText: '#000',
-        },
+        }
     },
 });
 
@@ -74,9 +74,23 @@ class App extends Component{
         let currPrice = this.state.totalPrice
         let inventory = this.state.inventory
 
+        //Checks to see if target item is in inventory
         for(var i = 0; i < inventory.length; i++){
             if(inventory[i].name === itemName){
-                updatedItems.push(inventory[i])
+
+                //Searches to see if target item is in cart already
+                let foundCartItem = false
+                for(var j = 0; j < updatedItems.length; j++){
+                    if(updatedItems[j].name === itemName){
+                        foundCartItem = true
+                        updatedItems[j].amount += 1
+                    }
+                }
+
+                //if target item is not in cart
+                if(!foundCartItem){
+                    updatedItems.push(inventory[i])
+                }
 
                 currPrice += inventory[i].price
             }
@@ -108,7 +122,13 @@ class App extends Component{
         let currPrice = this.state.totalPrice
 
         currPrice -= this.state.cartItems[index].price
-        updatedItems.splice(index, 1)
+
+        if(updatedItems[index].amount == 1){
+            updatedItems.splice(index, 1)
+        }
+        else{
+            updatedItems[index].amount -= 1
+        }
         
         this.setState({
             cartItems: updatedItems,
@@ -147,7 +167,8 @@ class App extends Component{
                 justify="center"
                 alignItems="center">
 
-                <Typography variant="h3" gutterBottom={true} color="primary">Price Checkout Calculator</Typography>
+                <Typography variant="h3" gutterBottom={true} color="primary" align="center">
+                    Price Checkout Calculator</Typography>
 
                 <Grid container direction="row" justify="center" alignItems="center">
                     <Grid item xs={10} md={5}>

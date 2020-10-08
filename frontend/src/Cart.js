@@ -1,6 +1,6 @@
 import React, { Component} from 'react';
 import './App.css'
-import {Typography,Paper, IconButton} from '@material-ui/core';
+import {Typography,Paper, IconButton, Grid} from '@material-ui/core';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { createMuiTheme } from '@material-ui/core/styles';
 
@@ -17,7 +17,7 @@ createMuiTheme({
             main: '#f44336',
             dark: '#ba000d',
             contrastText: '#000',
-        },
+        }
     },
 });
 
@@ -25,7 +25,11 @@ class CartItem extends Component {
     render() { 
         return (
             <div className="cartItem">
-                <Typography className="item-title" variant="h5">{this.props.item.name}</Typography>
+                <Grid container direction="row">
+                    <Typography variant="h5">{this.props.item.name}</Typography>
+                    <Typography className="itemAmount" variant="h6" align="right">
+                        (x{this.props.item.amount})</Typography>
+                </Grid>
                 <Typography variant="body1">${this.props.item.price.toFixed(2)} 
                 <IconButton color="secondary" onClick={() => this.props.removeItem(this.props.index)}>
                     <DeleteIcon/>

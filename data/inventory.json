@@ -1,12 +1,12 @@
 [
-	{ "name": "Dill Pickles", "price": 4.29},
-    { "name": "Sliced Pineapple", "price": 4.99},
-    { "name": "Roasted Peanuts", "price": 5.99},
-    { "name": "BMW M3", "price": 76999.99},
-    { "name": "Oreos", "price": 13.99},
-    { "name": "Crest Toothpaste", "price": 7.99},
-    { "name": "Xbox One Controller", "price": 79.99},
-    { "name": "Charmin Toilet Paper", "price": 21.99},
-    { "name": "Toothpicks", "price": 1.49},
-    { "name": "FIFA 21", "price":  89.99}
+	{ "name": "Dill Pickles", "price": 4.29, "amount": 1},
+    { "name": "Sliced Pineapple", "price": 4.99, "amount": 1},
+    { "name": "Roasted Peanuts", "price": 5.99, "amount": 1},
+    { "name": "BMW M3", "price": 76999.99, "amount": 1},
+    { "name": "Oreos", "price": 13.99, "amount": 1},
+    { "name": "Crest Toothpaste", "price": 7.99, "amount": 1},
+    { "name": "Xbox One Controller", "price": 79.99, "amount": 1},
+    { "name": "Charmin Toilet Paper", "price": 21.99, "amount": 1},
+    { "name": "Toothpicks", "price": 1.49, "amount": 1},
+    { "name": "FIFA 21", "price":  89.99, "amount": 1}
 ]
