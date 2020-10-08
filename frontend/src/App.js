@@ -45,7 +45,7 @@ class App extends Component{
                 
                 let startPrice = 0.00
                 for(var i = 0; i < resCartItems.length; i++){
-                    startPrice += resCartItems[i].price
+                    startPrice += resCartItems[i].price * resCartItems[i].amount
                 }
 
                 this.setState({

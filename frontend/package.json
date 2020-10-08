@@ -15,5 +15,6 @@
     "test": "react-scripts test --env=jsdom",
     "test-api": "cd api && flask test",
     "eject": "react-scripts eject"
-  }
+  },
+  "proxy": "https://csc301-a1-jollymar.herokuapp.com"
 }
