@@ -15,7 +15,7 @@ def get_discount_codes():
         data = json.load(f)
 
     response = jsonify(json.dumps(data))
-    response.headers.add('Access-Control-Allow-Origin', '*')
+    #response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 

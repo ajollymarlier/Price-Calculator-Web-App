@@ -39,7 +39,7 @@ class App extends Component{
         }
 
         //Fetch calls to retrieve inventory, saved cart items, and available discount codes
-        fetch(`${window.location}/getCartItems`)
+        fetch(`${window.location}api/getCartItems`)
             .then(res => res.json()).then(cartData => {
                 let resCartItems = JSON.parse(cartData)
                 
@@ -54,12 +54,12 @@ class App extends Component{
                 })
             })
 
-        fetch(`${window.location}/getDiscountCodes`)
+        fetch(`${window.location}api/getDiscountCodes`)
             .then(res => res.json()).then(discountData => {
                 this.setState({discounts: JSON.parse(discountData)})
             })
 
-        fetch(`${window.location}/getInventory`)
+        fetch(`${window.location}api/getInventory`)
             .then(res => res.json()).then(inventoryData => {
                 this.setState({inventory: JSON.parse(inventoryData)})
             })
