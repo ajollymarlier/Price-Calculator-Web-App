@@ -2,12 +2,7 @@ import json
 import os
 from flask import Flask, jsonify
 
-app = Flask(__name__, static_folder="/", static_url_path="/")
-
-@app.route("/")
-def index():
-	#return "YOU WEREN'T SUPPOSED TO SEE THIS"
-    return app.send_static_file('index.html')
+app = Flask(__name__)
 
 #Returns discountCode data from local json file
 @app.route('/api/getDiscountCodes', methods=['GET'])
