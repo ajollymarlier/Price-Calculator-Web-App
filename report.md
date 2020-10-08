@@ -5,7 +5,7 @@ Going into this project, I was not that familiar with the creation and deploymen
 ## **Frontend Technology**
 The three main technologies I considered for my frontend, were Angular, React, and Vue, since I wanted the app to be as responsive as possible.
 
-My first point of consideration, was each technologies' popularity in the industry. According to StackOverflow's 2019 survey, *https://insights.stackoverflow.com/survey/2019#technology*, React(31.3%) and Angular(30.7%) were much more more popular among web frameworks than Vue(15.2%). Since I wanted to choose a technology that was indicitave of what was popular among current developers, React or Angular seemed like the best choice.
+My first point of consideration, was each technologies' popularity in the industry. According to StackOverflow's 2019 survey, *https://insights.stackoverflow.com/survey/2019#technology*, React(31.3%) and Angular(30.7%) were much more more popular among web frameworks than Vue(15.2%). Since I wanted to choose a technology that was indicative of what was popular among current developers, React or Angular seemed like the best choice.
 
 Since this was my first time working with any kind of frontend frameworks, I wanted something with lots of documentation, and not too much customizability, since that would lead to inconsistent tutorials being produced. Since Vue's main drawing point was its customizability, that meant that the documentation I found was either way too vast for me to grasp in my limited working time, or two hyper-specified to one custom way of use. This meant that, again, React and Angular seemed more appealing, since they used a consistent Component-based system.
 
