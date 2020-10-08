@@ -1,5 +1,8 @@
 import json
-from flask import Flask, jsonify
+import os
+from flask import Flask, jsonify, request
+from flask.helpers import make_response
+import sys
 
 app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
 
@@ -15,7 +18,6 @@ def get_discount_codes():
         data = json.load(f)
 
     response = jsonify(json.dumps(data))
-    #response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 
@@ -26,7 +28,6 @@ def get_inventory():
         data = json.load(f)
 
     response = jsonify(json.dumps(data))
-    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
 
@@ -37,9 +38,20 @@ def get_cart_items():
         data = json.load(f)
     
     response = jsonify(json.dumps(data))
-    response.headers.add('Access-Control-Allow-Origin', '*')
     return response
 
+#Saves cart items
+@app.route('/api/saveCartItems', methods=['POST', "GET"])
+def save_cart_items():
+    req = request.get_json()
+
+    f = open("./data/cartItems.json", "w")
+    f.write(json.dumps(req))
+    f.close()
+
+    res = make_response(jsonify({"message": "CartItems Saved"}), 200)
+
+    return res
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))   

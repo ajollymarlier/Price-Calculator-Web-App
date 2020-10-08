@@ -63,6 +63,8 @@ class App extends Component{
             .then(res => res.json()).then(inventoryData => {
                 this.setState({inventory: JSON.parse(inventoryData)})
             })
+        
+        fetch(`${window.location}api/saveCartItems`)
 
     }
 
@@ -87,6 +89,17 @@ class App extends Component{
         this.setState({
             totalPrice: currPrice 
         })
+
+        //Saves current cartItems to server file
+        fetch(`${window.location}/api/saveCartItems`, {
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(updatedItems),
+            cache: "no-cache",
+            headers: new Headers({
+                "content-type": "application/json"
+            })
+        })
     }
 
     //Removes selected item from cartItems
@@ -97,10 +110,20 @@ class App extends Component{
         currPrice -= this.state.cartItems[index].price
         updatedItems.splice(index, 1)
         
-
         this.setState({
             cartItems: updatedItems,
             totalPrice: currPrice 
+        })
+
+        //Saves current cartItems to server file
+        fetch(`${window.location}/api/saveCartItems`, {
+            method: "POST",
+            credentials: "include",
+            body: JSON.stringify(updatedItems),
+            cache: "no-cache",
+            headers: new Headers({
+                "content-type": "application/json"
+            })
         })
     }
 
