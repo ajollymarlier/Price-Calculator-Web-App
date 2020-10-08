@@ -33,3 +33,13 @@ This is a simple item selection and price calculating web app. The user can sear
     - *This can be seen when a user refreshes the page while items are in their cart.*
     - *Since the point of this app is just to be a demo, I did not include specific cart item files for each unique user.*
         -  This would be a future feature.
+
+## **Testing Instructions**
+Firstly, ensure that npm is installed on your testing machine.
+
+Then clone this directory and navigate to the folder labeled "frontend" on a terminal, and input the following command:
+```
+$ npm test
+```
+
+The test case will be run and you will see your results shortly.

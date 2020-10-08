@@ -8,6 +8,10 @@ it('App renders without crashing', () => {
 });
 
 it("getInventory connection successful", () => {
-  fetch("/api/getInventory")
-    .then(res => console.assert(res.status == 200 || res.status == "200"), "Error")
+  fetch(`${window.origin}api/getInventory`)
+    .then(res => {
+      if(res.status !== 200){
+        throw Error
+      }
+    }).catch(() => {throw Error})
 })
