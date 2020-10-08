@@ -1,7 +1,12 @@
 import json
 from flask import Flask, jsonify
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='./frontend/build', static_url_path='/')
+
+#Default route
+@app.route('/')
+def index():
+    return app.send_static_file('index.html')
 
 #Returns discountCode data from local json file
 @app.route('/api/getDiscountCodes', methods=['GET'])
@@ -37,4 +42,4 @@ def get_cart_items():
 
 
 if __name__ == "__main__":
-    app.run()   
+    app.run(host='0.0.0.0', debug=False, port=os.environ.get('PORT', 80))   

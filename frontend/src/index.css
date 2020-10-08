@@ -1,0 +1,14 @@
+body {
+  /*margin: 0;
+  padding-top: 11%;
+  padding-left: 33%;*/
+  font-family: sans-serif;
+
+  /*display: inline-block;*/
+
+  overflow: auto;
+}
+
+#appContainer{
+  padding: 50px;
+}
