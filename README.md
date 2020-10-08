@@ -42,4 +42,4 @@ Then clone this directory and navigate to the folder labeled "frontend" on a ter
 $ npm test
 ```
 
-The test case will be run and you will see your results shortly.
+The test case will be run and you will see your results shortly. If the terminal prompts you to select a test case before running, input 'a' and press enter to test all cases.
