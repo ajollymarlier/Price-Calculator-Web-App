@@ -7,8 +7,6 @@ import PriceDisplay from "./PriceDisplay"
 import SearchBar from "./SearchBar"
 import Cart from "./Cart.js"
 
-const backend_address = "https://csc301-a1-jollymar-backend.herokuapp.com/api"
-
 createMuiTheme({
     palette: {
         primary: {
@@ -41,7 +39,7 @@ class App extends Component{
         }
 
         //Fetch calls to retrieve inventory, saved cart items, and available discount codes
-        fetch(backend_address + "/getCartItems")
+        fetch(`${window.location}/getCartItems`)
             .then(res => res.json()).then(cartData => {
                 let resCartItems = JSON.parse(cartData)
                 
@@ -56,12 +54,12 @@ class App extends Component{
                 })
             })
 
-        fetch(backend_address + "/getDiscountCodes")
+        fetch(`${window.location}/getDiscountCodes`)
             .then(res => res.json()).then(discountData => {
                 this.setState({discounts: JSON.parse(discountData)})
             })
 
-        fetch(backend_address + "/getInventory")
+        fetch(`${window.location}/getInventory`)
             .then(res => res.json()).then(inventoryData => {
                 this.setState({inventory: JSON.parse(inventoryData)})
             })
