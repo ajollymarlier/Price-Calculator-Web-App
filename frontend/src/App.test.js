@@ -8,7 +8,7 @@ it('App renders without crashing', () => {
   ReactDOM.render(<App />, div);
 });
 
-it("getInventory connection successful", () => {
+it("Check correct total price", () => {
   let testCartItems = [
     {"name": "Roasted Peanuts", "price": 5.99, "amount": 2}, 
     { "name": "Sliced Pineapple", "price": 4.99, "amount": 1}
@@ -26,22 +26,23 @@ it("getInventory connection successful", () => {
   let testDiscountRate = 0.2
   let testTotalPrice = 16.97
 
-  testUpdateDiscounts = () => {
-    console.log("Discount Updated")
+  function testUpdateDiscount(newRate){
+    console.log("Discount Updated" + newRate)
   }
 
   const div = document.createElement('div');
   ReactDOM.render(<PriceDisplay
-                    id="testPriceDisplay"
                     discounts={testDiscounts}
                     updateDiscount={testUpdateDiscount} 
                     totalPrice={testTotalPrice}
                     discountRate={testDiscountRate}
-                    cartItems={testCartItems}/>
-    , div);
+                    cartItems={testCartItems}/>, div)
+  
+  setTimeout(function(){
+    expect(document.getElementById("totalPriceDisplay").getElementsByTagName("h6")[0].innerHTML)
+        .toBe("Total Price: $19.18")
+  }, 3000)
 
-   
-
-  expect(testTotalPrice)
+  
 
 })

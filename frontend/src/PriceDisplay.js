@@ -49,10 +49,12 @@ class PriceDisplay extends Component{
                     <Typography variant="h6" align="right">Price (Before Tax): ${this.props.totalPrice.toFixed(2)}</Typography>
                     <Typography variant="h6" align="right">Tax: ${(this.props.totalPrice * 0.13).toFixed(2)}</Typography>
                     <Typography variant="h6" align="right">Discount ({this.props.discountRate * 100}%): -${(this.props.totalPrice * this.props.discountRate).toFixed(2)}</Typography>
-                    <Typography variant="h6" align="right" id="discountDisplay">
-                        Total Price: ${(((this.props.totalPrice * 1.13) 
-                                            - (this.props.totalPrice * this.props.discountRate)).toFixed(2))}
-                    </Typography>
+                    <div id="totalPriceDisplay">
+                        <Typography variant="h6" align="right">
+                            Total Price: ${(((this.props.totalPrice * 1.13) 
+                                                - (this.props.totalPrice * this.props.discountRate)).toFixed(2))}
+                        </Typography>
+                    </div>
                 </CardContent>
             </Card>
         );
